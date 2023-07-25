@@ -426,3 +426,5 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio
+/ServiceCourse.Api/obj/Debug/net7.0/ref/ServiceCourse.Api.dll
+/ServiceCourse.Api/obj/Debug/net7.0/refint/ServiceCourse.Api.dll
