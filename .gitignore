@@ -3,3 +3,20 @@
 ################################################################################
 
 /.vs
+/ServiceCourse.Api/.vs/ServiceCourse.Api/v17/.suo
+/ServiceCourse.Api/bin/Debug/net7.0/ServiceCourse.Api.dll
+/ServiceCourse.Api/bin/Debug/net7.0/ServiceCourse.Api.pdb
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.AssemblyInfo.cs
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.assets.cache
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.csproj.AssemblyReference.cache
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.MvcApplicationPartsAssemblyInfo.cs
+/ServiceCourse.Api/obj/ServiceCourse.Api.csproj.nuget.g.props
+/ServiceCourse.Api/obj/ServiceCourse.Api.csproj.nuget.dgspec.json
+/ServiceCourse.Api/obj/project.nuget.cache
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.csproj.CoreCompileInputs.cache
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.csproj.FileListAbsolute.txt
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.dll
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.GeneratedMSBuildEditorConfig.editorconfig
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.pdb
+/ServiceCourse.Api/obj/project.assets.json
+/ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.genruntimeconfig.cache
