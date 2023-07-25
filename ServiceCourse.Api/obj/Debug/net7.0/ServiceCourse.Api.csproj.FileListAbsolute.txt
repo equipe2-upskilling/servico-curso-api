@@ -36,3 +36,8 @@ C:\Users\mathe\Documents\matheus-curso-anima\servico-api-curso\ServiceCourse.Api
 C:\Users\mathe\Documents\matheus-curso-anima\servico-api-curso\ServiceCourse.Api\obj\Debug\net7.0\ServiceCourse.Api.pdb
 C:\Users\mathe\Documents\matheus-curso-anima\servico-api-curso\ServiceCourse.Api\obj\Debug\net7.0\ServiceCourse.Api.genruntimeconfig.cache
 C:\Users\mathe\Documents\matheus-curso-anima\servico-api-curso\ServiceCourse.Api\obj\Debug\net7.0\ref\ServiceCourse.Api.dll
+C:\Users\mathe\Documents\matheus-curso-anima\servico-api-curso\ServiceCourse.Api\bin\Debug\net7.0\Humanizer.dll
+C:\Users\mathe\Documents\matheus-curso-anima\servico-api-curso\ServiceCourse.Api\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\mathe\Documents\matheus-curso-anima\servico-api-curso\ServiceCourse.Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\mathe\Documents\matheus-curso-anima\servico-api-curso\ServiceCourse.Api\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\mathe\Documents\matheus-curso-anima\servico-api-curso\ServiceCourse.Api\bin\Debug\net7.0\System.CodeDom.dll
