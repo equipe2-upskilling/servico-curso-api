@@ -20,3 +20,4 @@
 /ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.pdb
 /ServiceCourse.Api/obj/project.assets.json
 /ServiceCourse.Api/obj/Debug/net7.0/ServiceCourse.Api.genruntimeconfig.cache
+*.vsidx
