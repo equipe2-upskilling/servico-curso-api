@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "K/9gbBUutsgK8SiJoFqfRChP16+VDrBBztjzerj6lIo=",
+  "Source": "ServiceCourse.Api",
+  "BasePath": "_content/ServiceCourse.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
