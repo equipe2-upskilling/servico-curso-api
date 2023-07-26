@@ -29,7 +29,7 @@ namespace ServiceCourse.Api.Services
 
             var courseResult = new CourseModel()
             {
-                Id = course.Id,
+                CourseId = course.Courseid,
                 Name = course.Name,
                 Description = course.Description,
                 Duration = course.Duration,
@@ -51,7 +51,7 @@ namespace ServiceCourse.Api.Services
 
             var courseResults = courses.Select(course => new CourseModel
             {
-                Id = course.Id,
+                CourseId = course.Courseid,
                 Name = course.Name,
                 Description = course.Description,
                 Duration = course.Duration,
