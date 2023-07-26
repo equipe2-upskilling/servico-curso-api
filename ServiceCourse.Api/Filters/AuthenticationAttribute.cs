@@ -4,7 +4,7 @@ using ServiceCourse.Api.Util;
 
 namespace ServiceCourse.Api.Filters
 {
-    public class AuthenticationAttribute: ActionFilterAttribute
+    public class AuthenticationAttribute : ActionFilterAttribute
     {
         public override async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
@@ -32,7 +32,9 @@ namespace ServiceCourse.Api.Filters
                         return;
                     }
                 }
-                catch { }
+                catch(Exception ex)
+                {
+                }
             }
 
             var result = new ServiceResult<HttpClient>();
@@ -41,34 +43,5 @@ namespace ServiceCourse.Api.Filters
 
             context.Result = new UnauthorizedObjectResult(result);
         }
-
-        //public async Task <dynamic> login()
-        //{
-        //    var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-
-        //    var baseUrl = configuration["URLIdentityServer:BaseUrl"];
-        //    var loginEndpoint = configuration["URLIdentityServer:LoginEndpoint"];
-        //    var userName = configuration["URLIdentityServer:UserName"];
-        //    var password = configuration["URLIdentityServer:Password"];
-        //    var requestData = new { Username = userName, Password = password };
-        //    var content = new StringContent(JsonConvert.SerializeObject(requestData), Encoding.UTF8, "application/json");
-        //    var httpClient = new HttpClient();
-        //    var response =  await httpClient.PostAsync($"{baseUrl}{loginEndpoint}", content);
-
-
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        var responseContent = response.Content.ReadAsStringAsync().Result;
-
-
-        //        var contentResult = JsonConvert.DeserializeObject<dynamic>(responseContent);
-
-        //        if (contentResult.Result != null)
-        //        {
-        //            return contentResult.Result;
-        //        }
-        //    }
-        //    return null;
-        //}
     }
 }

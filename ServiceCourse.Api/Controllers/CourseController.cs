@@ -28,7 +28,7 @@ namespace ServiceCourse.Api.Controllers
         {
             var serviceResult = await _courseService.GetCourseAsync(courseId);
 
-            if (serviceResult.Success && serviceResult.Result.Id != null)
+            if (serviceResult.Success && serviceResult.Result.CourseId != null)
                 return Ok(serviceResult.Result);
 
             return BadRequest(serviceResult.ErrorMessage);

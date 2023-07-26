@@ -22,11 +22,13 @@ namespace ServiceCourse.Api.Data
 
             modelBuilder.Entity<Course>(entity =>
             {
-                entity.HasKey(e => e.Id).HasName("courses_pkey");
+                entity.HasKey(e => e.Courseid).HasName("courses_pkey");
 
                 entity.ToTable("courses");
 
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Courseid)
+                    .HasDefaultValueSql("nextval('courses_id_seq'::regclass)")
+                    .HasColumnName("courseid");
                 entity.Property(e => e.Description)
                     .HasMaxLength(300)
                     .HasColumnName("description");
