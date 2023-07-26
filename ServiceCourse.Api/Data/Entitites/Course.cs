@@ -2,7 +2,7 @@
 
 public partial class Course
 {
-    public int Id { get; set; }
+    public int Courseid { get; set; }
 
     public string? Name { get; set; }
 

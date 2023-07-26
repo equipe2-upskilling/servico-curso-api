@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ServiceCourse.Api.Data.Entitites;
+﻿namespace ServiceCourse.Api.Data.Entitites;
 
 public partial class Enrollmentstatus
 {
