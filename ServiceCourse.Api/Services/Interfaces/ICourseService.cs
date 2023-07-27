@@ -1,5 +1,4 @@
-﻿using ServiceCourse.Api.Data.Entitites;
-using ServiceCourse.Api.Services.Models;
+﻿using ServiceCourse.Api.Services.Models;
 using ServiceCourse.Api.Util;
 
 namespace ServiceCourse.Api.Services.Interfaces
@@ -8,5 +7,6 @@ namespace ServiceCourse.Api.Services.Interfaces
     {
         Task<ServiceResult<CourseModel>> GetCourseAsync(int id);
         Task<ServiceResult<List<CourseModel>>> GetCoursesAsync();
+        Task<ServiceResult<List<CourseModel>>> GetCoursesByTeacherIdAsync(int teacherId);
     }
 }

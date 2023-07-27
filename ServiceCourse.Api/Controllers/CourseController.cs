@@ -49,6 +49,22 @@ namespace ServiceCourse.Api.Controllers
             else
                 return BadRequest(serviceResult.ErrorMessage);
         }
+
+        [HttpGet("/teacherId")]
+        [Produces(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(List<CourseModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> GetByTeacherId(int teacherId)
+        {
+            var serviceResult = await _courseService.GetCoursesByTeacherIdAsync(teacherId);
+
+            if (serviceResult.Success)
+                return Ok(serviceResult.Result);
+            else
+                return BadRequest(serviceResult.ErrorMessage);
+        }
     }
 }
 

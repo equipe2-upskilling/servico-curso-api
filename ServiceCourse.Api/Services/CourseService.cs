@@ -85,5 +85,38 @@ namespace ServiceCourse.Api.Services
             return result;
         }
 
+        public async Task<ServiceResult<List<CourseModel>>> GetCoursesByTeacherIdAsync(int teacherId)
+        {
+            var result = new ServiceResult<List<CourseModel>>();
+            var courses = await _courseRepository.GetCoursesByTeacherIdAsync(teacherId);
+
+            if (courses == null || !courses.Any())
+                return result.SetError("Nenhum curso encontrado");
+
+            var courseResults = courses.Select(course => new CourseModel
+            {
+                CourseId = course.Courseid,
+                Name = course.Name,
+                Description = course.Description,
+                Duration = course.Duration,
+                Price = course.Price,
+                TeacherId = course.Teacherid,
+                Enrollmentstatusid = course.Enrollmentstatusid,
+                Lessons = course.Lessons.Select(x => new LessonModel
+                {
+                    Lessonid = x.Lessonid,
+                    Courseid = x.Courseid,
+                    Name = x.Name,
+                    Description = x.Description,
+                    Lessonurl = x.Lessonurl,
+                    Image = x.Image,
+                    Registerdate = x.Registerdate,
+                }).ToList(),
+            }).ToList();
+
+            result.SetSuccess(courseResults);
+
+            return result;
+        }
     }
 }

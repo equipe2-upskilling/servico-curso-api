@@ -65,7 +65,7 @@ namespace ServiceCourse.Test.Services
         }
 
         [Fact]
-        public async Task GetCourses_When_Should_Return_Empty()
+        public async Task GetCourses_Should_Return_Empty()
         {
             //Setup
             _courseRepositoryMock
@@ -82,7 +82,7 @@ namespace ServiceCourse.Test.Services
         }
 
         [Fact]
-        public async Task GetCourses_When_Should_Return_List()
+        public async Task GetCourses_Should_Return_List()
         {
             //Setup
             List<Course> courses = new List<Course>()
@@ -99,7 +99,6 @@ namespace ServiceCourse.Test.Services
                 }
             };
 
-
             //Arrange
 
             _courseRepositoryMock
@@ -113,6 +112,63 @@ namespace ServiceCourse.Test.Services
 
             Assert.True(result.Success);
             Assert.True(result.Result.Count > 0);
+        }
+
+
+        [Fact]
+        public async Task GetCourses_By_TeacherId_Should_Return_List()
+        {
+            //Setup
+            List<Course> courses = new List<Course>()
+            {
+                new Course()
+                {
+                Courseid = 1,
+                Name = "Curso",
+                Teacherid = 1
+                },
+                new Course()
+                {
+                    Courseid = 2,
+                    Name = "Curso 2",
+                    Teacherid = 1
+                }
+            };
+
+            //Arrange
+            var teacherId = 1;
+
+            _courseRepositoryMock
+                .Setup(e => e.GetCoursesByTeacherIdAsync(teacherId))
+                .ReturnsAsync(courses);
+
+            //Act
+            var result = await _courseService.GetCoursesByTeacherIdAsync(teacherId);
+
+            //Assert
+
+            Assert.True(result.Success);
+            Assert.True(result.Result.Count > 0);
+        }
+
+        [Fact]
+        public async Task GetCourses_By_TeacherId_When_Id_Is_Not_Valid_Should_Return_List_Empty()
+        {
+            //Setup
+            _courseRepositoryMock
+                .Setup(e => e.GetCoursesByTeacherIdAsync(0))
+                .ReturnsAsync((List<Course>)null);
+
+            //Arrange
+            var teacherId = 0;
+
+            //Act
+            var result = await _courseService.GetCoursesByTeacherIdAsync(teacherId);
+
+            //Assert
+
+            Assert.False(result.Success);
+            Assert.Contains("Nenhum curso encontrado", result.ErrorMessage);
         }
     }
 }

@@ -6,5 +6,6 @@ namespace ServiceCourse.Api.Data.Interfaces
     {
         Task<Course> GetCourseAsync(int id);
         Task<List<Course>> GetCoursesAsync();
+        Task<List<Course>> GetCoursesByTeacherIdAsync(int teacherId);
     }
 }

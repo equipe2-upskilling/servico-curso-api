@@ -24,5 +24,13 @@ namespace ServiceCourse.Api.Data.Repositories
                  .ToListAsync()
                  .ConfigureAwait(false);
         }
+
+        public async Task<List<Course>> GetCoursesByTeacherIdAsync(int teacherId)
+        {
+            return await _context.Courses
+                .Include(courses => courses.Lessons)
+                .Where(course => course.Teacherid == teacherId)
+                .ToListAsync().ConfigureAwait(false);
+        }
     }
 }
