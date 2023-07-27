@@ -1,8 +1,8 @@
-#API servico-curso-api
+# API servico-curso-api
 A API de Busca de Cursos fornece endpoints para consultar informações sobre cursos disponíveis no sistema. Abaixo estão listados os principais endpoints, suas funcionalidades e os parâmetros aceitos.
 
-#Endpoints
-#GET /cursos/GetByTeacherId
+**Endpoints**
+# GET /cursos/GetByTeacherId**
 Este endpoint retorna uma lista de cursos associados a um professor específico, identificado pelo seu ID.
 
 Parâmetros
@@ -11,13 +11,13 @@ Exemplo de Requisição
 
 GET https://api.busca-cursos.com/v1/cursos/GetByTeacherId?teacherId=12345
 
-#GET /cursos/GetAllAsync
+# GET /cursos/GetAllAsync
 Este endpoint retorna uma lista de todos os cursos existentes no sistema.
 
 Exemplo de Requisição
 GET https://api.busca-cursos.com/v1/cursos/GetAllAsync
 
-#GET /cursos/GetAsync
+# GET /cursos/GetAsync
 Este endpoint retorna informações detalhadas de um curso específico, identificado pelo seu ID.
 
 Parâmetros
