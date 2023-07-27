@@ -16,5 +16,11 @@ public partial class Course
 
     public DateTime? Registerdate { get; set; }
 
+    public string? Coverimg { get; set; }
+
+    public int? Teacherid { get; set; }
+
     public virtual Enrollmentstatus? Enrollmentstatus { get; set; }
+
+    public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
 }
