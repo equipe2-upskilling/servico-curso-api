@@ -13,6 +13,7 @@ namespace ServiceCourse.Api.Data
         public virtual DbSet<Course> Courses { get; set; }
 
         public virtual DbSet<Enrollmentstatus> Enrollmentstatuses { get; set; }
+        public virtual DbSet<Lesson> Lessons { get; set; }
 
         public virtual DbSet<User> Users { get; set; }
 
@@ -29,6 +30,9 @@ namespace ServiceCourse.Api.Data
                 entity.Property(e => e.Courseid)
                     .HasDefaultValueSql("nextval('courses_id_seq'::regclass)")
                     .HasColumnName("courseid");
+                entity.Property(e => e.Coverimg)
+                    .HasMaxLength(255)
+                    .HasColumnName("coverimg");
                 entity.Property(e => e.Description)
                     .HasMaxLength(300)
                     .HasColumnName("description");
@@ -42,6 +46,7 @@ namespace ServiceCourse.Api.Data
                     .HasDefaultValueSql("CURRENT_TIMESTAMP")
                     .HasColumnType("timestamp without time zone")
                     .HasColumnName("registerdate");
+                entity.Property(e => e.Teacherid).HasColumnName("teacherid");
 
                 entity.HasOne(d => d.Enrollmentstatus).WithMany(p => p.Courses)
                     .HasForeignKey(d => d.Enrollmentstatusid)
@@ -58,6 +63,36 @@ namespace ServiceCourse.Api.Data
                 entity.Property(e => e.Name)
                     .HasMaxLength(15)
                     .HasColumnName("name");
+            });
+
+            modelBuilder.Entity<Lesson>(entity =>
+            {
+                entity.HasKey(e => e.Lessonid).HasName("lessons_pkey");
+
+                entity.ToTable("lessons");
+
+                entity.Property(e => e.Lessonid).HasColumnName("lessonid");
+                entity.Property(e => e.Courseid).HasColumnName("courseid");
+                entity.Property(e => e.Description)
+                    .HasMaxLength(300)
+                    .HasColumnName("description");
+                entity.Property(e => e.Image)
+                    .HasMaxLength(255)
+                    .HasColumnName("image");
+                entity.Property(e => e.Lessonurl)
+                    .HasMaxLength(255)
+                    .HasColumnName("lessonurl");
+                entity.Property(e => e.Name)
+                    .HasMaxLength(200)
+                    .HasColumnName("name");
+                entity.Property(e => e.Registerdate)
+                    .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                    .HasColumnType("timestamp without time zone")
+                    .HasColumnName("registerdate");
+
+                entity.HasOne(d => d.Course).WithMany(p => p.Lessons)
+                    .HasForeignKey(d => d.Courseid)
+                    .HasConstraintName("lessons_courseid_fkey");
             });
 
             modelBuilder.Entity<User>(entity =>
