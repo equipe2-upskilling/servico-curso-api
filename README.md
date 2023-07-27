@@ -2,7 +2,7 @@
 A API de Busca de Cursos fornece endpoints para consultar informações sobre cursos disponíveis no sistema. Abaixo estão listados os principais endpoints, suas funcionalidades e os parâmetros aceitos.
 
 **Endpoints**
-# GET /cursos/GetByTeacherId**
+# GET /cursos/GetByTeacherId
 Este endpoint retorna uma lista de cursos associados a um professor específico, identificado pelo seu ID.
 
 Parâmetros
