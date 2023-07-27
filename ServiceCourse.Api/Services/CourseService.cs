@@ -34,6 +34,7 @@ namespace ServiceCourse.Api.Services
                 Description = course.Description,
                 Duration = course.Duration,
                 Price = course.Price,
+                TeacherId = course.Teacherid,
                 Enrollmentstatusid = course.Enrollmentstatusid,
                 Lessons = course.Lessons.Select(x => new LessonModel
                 {
@@ -67,6 +68,7 @@ namespace ServiceCourse.Api.Services
                 Description = course.Description,
                 Duration = course.Duration,
                 Price = course.Price,
+                TeacherId = course.Teacherid,
                 Enrollmentstatusid = course.Enrollmentstatusid,
                 Lessons = course.Lessons.Select(x => new LessonModel
                 {
